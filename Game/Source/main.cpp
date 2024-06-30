@@ -38,8 +38,21 @@ int main(int argc, char* argv[])
 		SDL_RenderClear(renderer);
 
 		// draw line
-		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
-		SDL_RenderDrawLine(renderer, 0, 0, 800, 600);
+
+		// SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
+		// SDL_RenderDrawLine(renderer, 0, 0, 800, 600);
+		// int value = rand() % range; // generate a number between 0-999
+
+		/*SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
+		SDL_RenderDrawLine(renderer, 0, 400, 400, 400);
+		SDL_RenderDrawLine(renderer, 400, 400, 200, 0);
+		SDL_RenderDrawLine(renderer, 200, 0, 0, 400);*/
+
+		for (int i = 0; i < 255; i++)
+		{
+			SDL_SetRenderDrawColor(renderer, rand() % 256, rand() % 256, rand() % 256, 0); // create random color
+			SDL_RenderDrawLine(renderer, rand() % 800, rand() % 600, rand() % 800, rand() % 600);
+		}
 
 		// show screen
 		SDL_RenderPresent(renderer);
